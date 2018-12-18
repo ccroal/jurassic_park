@@ -2,6 +2,14 @@ const assert = require('assert');
 const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 
+
+let park;
+let dinosaur1;
+let dinosaur2;
+let dinosaur3;
+let dinosaur4;
+let dinosaurs;
+
 describe('Park', function() {
 
   beforeEach(function () {
@@ -33,7 +41,11 @@ describe('Park', function() {
     assert.strictEqual = (actual, 4)
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function(){
+    park.deleteDinosaur()
+    const actual = park.dinosaurs.length;
+    assert.strictEqual = (actual, 3)
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
